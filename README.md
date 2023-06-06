@@ -9,7 +9,7 @@ The tweet IDs are organized as follows:
 4) Each Txt file named as covid19_tweet_id_date.txt stores the tweet IDs.
 5) The file statistics.txt counts the statistics of each language including the language, total size of this language, and the ratio in the all languages.
 
-For the labeled tweets, we store them in the filefolder called labeledTweets where they are organized in five CSV files where English tweets and Arabic tweets are originally annoted by experienced annotators and other three language tweets are translated with Google Translate from English tweets. The size of each kind of language tweets are all 10K. There are 10 emotions including "Optimistic", "Thankful", "Empathetic", "Pessimistic", "Anxious", "Sad", "Annoyed", "Denial", "Official report", and "Joking". 
+For the labeled tweets, we store them in the filefolder called labeledTweets where they are organized in five CSV files where English tweets and Arabic tweets are originally annoted by experienced annotators and other three language tweets are translated with Google Translate from English tweets. The size of each kind of language tweets are all 10K. There are 10 emotions including "Optimistic", "Thankful", "Empathetic", "Pessimistic", "Anxious", "Sad", "Annoyed", "Denial", "Official report", and "Joking". The data cleaning code is attached in tweetClean.py. We remove any information about users for privacy protection.
 
 # Data Usage Agreement
 This dataset complies with Twitter’s Terms of Service. If you use this dataset, this means that you agree with the license and term of Twitter.
