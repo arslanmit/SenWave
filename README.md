@@ -1,5 +1,5 @@
-# FineCovidSen: The Multi-Language Fine-Grained Sentiment Analysis Dataset for COVID-19 Tweets
-This dataset is used for the EACL paper submission, which contains the labeled tweets and a large scale of the unlabeled tweet IDs for fine-grained sentimental analysis about COVID-19. The labeled tweets were organized in two languages (English and Arabic both with 10K) while the unlabeled tweet IDs were represented with only IDs to comply with Twitter’s Terms of Service in five languages (English, Arabic, Spanish, French, and Italian in Tweets). In order to make use of the labeled data as much as possible, we utilize Google Translate (https://translate.google.com/) to translate the labeled English tweets into Spanish, French, and Italian. The translated tweets are of good quality with a $0.33$ Bleu Score. The Twitter data was collected from March 1, 2020, with Twint(https://github.com/twintproject/twint). These data are only released for non-commercial research use.
+# FineCOVIDSen: A Groundbreaking Fine-Grained Sentiment Analysis Dataset for Unveiling Global Public Sentiment in COVID-19 Tweets
+This dataset is used for the EACL paper submission, which contains the labeled tweets and a large scale of the unlabeled tweet IDs for fine-grained sentimental analysis about COVID-19. The labeled tweets were organized in two languages (English and Arabic both with 10K) while the unlabeled tweet IDs were represented with only IDs to comply with Twitter’s Terms of Service in five languages (English, Arabic, Spanish, French, and Italian in Tweets). In order to make use of the labeled data as much as possible, we utilize Google Translate (https://translate.google.com/) to translate the labeled English tweets into Spanish, French, and Italian. The translated tweets are of good quality with a $0.33$ Bleu Score. The Twitter data was collected from March 1, 2020, with Twint(https://github.com/twintproject/twint). The dataset is licensed under Apache-2.0 license, which allows for the sharing and adaptation of the dataset under certain conditions. These data are only released for non-commercial research use. 
 
 # Data Organization
 The tweet IDs are organized as follows:
@@ -28,6 +28,6 @@ The statistics of five language tweets are shown in the following table:
 |It       |2684198       |0.02560509271002187      |
 
 
-# Scope of data usage
+# Scope of Data Usage
 
-The SenWave dataset offers a unique resource for various sentiment analysis tasks, such as public opinion analysis and stock market forecast which convey complex sentiments. Besides, researchers can utilize this dataset to explore sentiment dynamics across different languages, investigate cultural variations in emotional responses to the pandemic, identify sentiment triggers, and assess the impact of sentiment on public health behaviors and policy decisions.
+The FineCOVIDSen dataset offers a unique resource for various sentiment analysis tasks, such as public opinion analysis and stock market forecast which convey complex sentiments. Besides, researchers can utilize this dataset to explore sentiment dynamics across different languages, investigate cultural variations in emotional responses to the pandemic, identify sentiment triggers, and assess the impact of sentiment on public health behaviors and policy decisions.
