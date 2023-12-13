@@ -30,4 +30,4 @@ The statistics of five language tweets are shown in the following table:
 
 # Scope of Data Usage
 
-The FineCOVIDSen dataset offers a unique resource for various sentiment analysis tasks, such as public opinion analysis and stock market forecast which convey complex sentiments. Besides, researchers can utilize this dataset to explore sentiment dynamics across different languages, investigate cultural variations in emotional responses to the pandemic, identify sentiment triggers, and assess the impact of sentiment on public health behaviors and policy decisions.
+The SenWave dataset offers a unique resource for various sentiment analysis tasks, such as public opinion analysis and stock market forecast which convey complex sentiments. Besides, researchers can utilize this dataset to explore sentiment dynamics across different languages, investigate cultural variations in emotional responses to the pandemic, identify sentiment triggers, and assess the impact of sentiment on public health behaviors and policy decisions.
