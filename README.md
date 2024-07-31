@@ -1,4 +1,4 @@
-# SenWave: A Fine-Grained Sentiment Analysis Dataset for COVID-19 Tweets
+# SenWave: A Fine-Grained Multi-Language Sentiment Analysis Dataset for COVID-19 Tweets
 This dataset contains the labeled tweets and a large scale of the unlabeled tweet IDs for fine-grained sentimental analysis about COVID-19. The labeled tweets were organized in two languages (English and Arabic both with 10K) while the unlabeled tweet IDs were represented with only IDs to comply with Twitter’s Terms of Service in five languages (English, Arabic, Spanish, French, and Italian). In order to make use of the labeled data as much as possible, we utilize Google Translate (https://translate.google.com/) to translate the labeled English tweets into Spanish, French, and Italian as the data augmentation. The translated tweets are of good quality with a $0.33$ Bleu Score. The Twitter data was collected from March 1, 2020, with Twint(https://github.com/twintproject/twint). The dataset is licensed under Apache-2.0 license, which allows for the sharing and adaptation of the dataset under certain conditions. These data are only released for non-commercial research use. 
 
 
