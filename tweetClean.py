@@ -4,13 +4,28 @@
 import pandas as pd
 import numpy as np
 import re
-from Loggers import LogerClass
+try:
+    from Loggers import LogerClass
+    logger = LogerClass()
+except ImportError:  # Fallback to standard logging if custom logger is unavailable
+    import logging
+    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger(__name__)
 
-#load log
-logger = LogerClass()
 
-#The number of classes we will use
-CLASS_NUM = 10
+# Emotion columns present in the labeled dataset
+EMOTION_COLS = [
+    "Optimistic",
+    "Thankful",
+    "Empathetic",
+    "Pessimistic",
+    "Anxious",
+    "Sad",
+    "Annoyed",
+    "Denial",
+    "Official report",
+    "Joking",
+]
 
 #cleaning emoji and some special chars, like url, username, hashtag and blank
 def cleaningEmojiChars(line_twitter):
@@ -32,15 +47,25 @@ def cleaningBenchmark(ori_path, des_path):
     logger.info('Data have been cleaned!')
 
 def loadData(ori_data_path, clean_data_path):
+    """Load data from ``ori_data_path``, clean it, and return a ``DataFrame``.
+
+    If the cleaned data contains the :data:`EMOTION_COLS`, they are combined
+    into a tuple stored in the ``labels`` column. Otherwise a ``label`` column
+    is expected. The cleaned tweets are stored in ``text``.
+    """
+
     cleaningBenchmark(ori_data_path, clean_data_path)
     data_df = pd.read_csv(clean_data_path)
-    if CLASS_NUM == 11:
-        head = ["Optimistic", "Thankful", "Empathetic","Pessimistic","Anxious","Sad","Annoyed","Denial","Official report","Joking"]
-        data_df['labels'] = list(zip(data_df[head[0]].tolist(), data_df[head[1]].tolist(), data_df[head[2]].tolist(), data_df[head[3]].tolist(),
-                        data_df[head[4]].tolist(), data_df[head[5]].tolist(), data_df[head[6]].tolist(), data_df[head[7]].tolist(),
-                        data_df[head[8]].tolist(), data_df[head[9]].tolist(), data_df[head[10]].tolist()))
+
+    if set(EMOTION_COLS).issubset(data_df.columns):
+        # Multi-label format
+        data_df["labels"] = list(
+            zip(*(data_df[col].tolist() for col in EMOTION_COLS))
+        )
+    elif "label" in data_df.columns:
+        data_df["labels"] = list(data_df["label"].tolist())
     else:
-        head = ['label']
-        data_df['labels'] = list(data_df[head[0]].tolist())
-    data_df['text'] = data_df['Tweet'].apply(lambda x: x.replace('\n', ' '))
+        raise KeyError("Expected 'label' or emotion columns in data")
+
+    data_df["text"] = data_df["Tweet"].apply(lambda x: x.replace("\n", " "))
     return data_df
